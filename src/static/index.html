@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">Library Management System</h1>
+            <nav class="nav-tabs">
+                <button id="nav-books" class="nav-btn active">Books</button>
+                <button id="nav-authors" class="nav-btn">Authors</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+        <!-- Books Section -->
+        <section id="books-section" class="section active">
+            <div class="section-header">
+                <h2>Books</h2>
+                <div class="actions">
+                    <input type="text" id="books-search" class="search-input" placeholder="Search books...">
+                    <button id="add-book-btn" class="btn btn-primary">Add Book</button>
+                </div>
+            </div>
+            <div id="books-loading" class="loading hidden">Loading books...</div>
+            <div id="books-error" class="alert alert-error hidden"></div>
+            <div id="books-table-container"></div>
+        </section>
+
+        <!-- Authors Section -->
+        <section id="authors-section" class="section">
+            <div class="section-header">
+                <h2>Authors</h2>
+                <div class="actions">
+                    <input type="text" id="authors-search" class="search-input" placeholder="Search authors...">
+                    <button id="add-author-btn" class="btn btn-success">Add Author</button>
+                </div>
+            </div>
+            <div id="authors-loading" class="loading hidden">Loading authors...</div>
+            <div id="authors-error" class="alert alert-error hidden"></div>
+            <div id="authors-table-container"></div>
+        </section>
+    </main>
+
+    <!-- Modal for Forms -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- Scripts -->
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/books.js"></script>
+    <script src="/static/js/authors.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

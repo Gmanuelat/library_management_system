@@ -32,7 +32,8 @@ class Database:
             # Build the full path to the database
             full_db_path = os.path.join(current_dir, self.db_path)
 
-            self.conn = sqlite3.connect(full_db_path)
+            # Allow SQLite to be used across threads (for Flask)
+            self.conn = sqlite3.connect(full_db_path, check_same_thread=False)
             self.cursor = self.conn.cursor()
 
             # Enable foreign key constraints
