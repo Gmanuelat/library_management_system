@@ -160,4 +160,4 @@ if __name__ == '__main__':
     print("Access the application at: http://localhost:5001")
     print("\nPress CTRL+C to stop the server\n")
 
-    app.run(debug=True, host='0.0.0.0', port=5001)
+    app.run(debug=True, host='0.0.0.0', port=5001, threaded=True)
